@@ -2,32 +2,23 @@
 int main()
 {
 	int grade;
-	char n,t;
-	//t=getchar();
-	//putchar(t);
+	char t,n;
 	printf("请输入算法类型（ I||i--if计算，S||s--switch 计算）： ");
-	
-	while(1)                          //1代表什么 
-	{
-	scanf("%c",&t);
-	//int grade=-1;
-    //printf("请重新输入一个（0~100）的成绩整数!\n");
-	    	
-	    if(t=='I' ||t=='i'||t=='S' || t=='s')             //需要用char 字符型来代表 
-	    {  printf("请输入你的成绩：",grade); 
+	t=getchar();
+	getchar();
+	while(1)                          
+	{ if(t=='I' ||t=='i'||t=='S' || t=='s')             //需要用char 字符型来代表 
+		{  
+		printf("请输入你的成绩：",grade); 
 		   scanf("%d",&grade);
-		   
-		   n=getchar();                                 //getchar 与putchar的使用 
-		   putchar(n);
 		   
 		   if(t=='I'||t=='i')
 		   {
 			  if(grade<0||grade>100)
 		     	{
-				 
-			    	printf("请重新输入一个（0~100）的成绩整数!！\n");
+				 	printf("请重新输入一个（0~100）的成绩整数!！\n");
 				    continue;
-		        	}
+		        }
 			else if(grade<60)
 			
 				printf("成绩不及格！\n");
@@ -43,24 +34,31 @@ int main()
 		   else if(grade>80&&grade<=100)
 			
 				printf("成绩优秀！\n");
-		}
+				break;
+	    	}
 		    else if(t=='S'||t=='s')
 		    
-		   {//printf("%d对应的成绩等级为%c\n",grade,n); 
-		        switch(grade/10)
-		       {case 10:n='a';break;
-			   case 9:n='b';break;
-			   case 8:n='c';break;
-			   case 7:n='d';break;
-			   case 6:n='e';break;
-			   case 1:n='f';break;
+		   {   
+		          char n;
+		        
+		        n=grade/10;
+		        
+		        switch(n)
+		       {case 10:n='A';break;
+			   case 9:n='B';break;
+			   case 8:n='C';break;
+			   case 7:n='D';break;
+			   case 6:n='E';break;
+			   case 1:
 			   case 2:
 			   case 3:
 			   case 4:
 			   case 5:n='f';break;
-			   //printf("%d对应的成绩等级为%c\n",grade,n);
-			   default :printf("请重新输入一个（0~100）的成绩整数!\n");break;}
-				  printf("%d对应的成绩等级为%c\n",grade,n);
-				  break;	
-				  return 0;}
-	}}}
+			   default :grade<0&&grade>100;
+		       printf("请重新输入一个（0~100）的成绩整数!！\n");break;
+			  
+			   }
+			   printf("%d对应的成绩等级为%c\n",grade,n);
+			   break;
+			  return 0;
+}     }  }  }
